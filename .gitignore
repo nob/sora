@@ -1,0 +1,6 @@
+bin/
+.sass-cache/
+bower_components/
+node_modules/
+public/
+*.log
