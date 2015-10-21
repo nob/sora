@@ -16,13 +16,15 @@
     "postinstall": "bower install"
   },
   "dependencies": {
-    "auto-reload-brunch": "latest",
-    "clean-css-brunch": "latest",
-    "css-brunch": "latest",
-    "javascript-brunch": "latest",
-    "sass-brunch": "latest",
-    "static-site-brunch-with-hbs-helpers": "github:nob/static-site-brunch-with-hbs-helpers",
-    "uglify-js-brunch": "latest"
+    "auto-reload-brunch": "^1.8.1",
+    "brunch-static": "^1.0.0",
+    "clean-css-brunch": "^1.7.2",
+    "css-brunch": "^1.7.0",
+    "html-brunch-static": "^1.1.0",
+    "javascript-brunch": "^1.8.0",
+    "marked-brunch-static": "^1.1.0",
+    "sass-brunch": "^1.9.1",
+    "uglify-js-brunch": "^1.7.8"
   },
   "devDependencies": {}
 }

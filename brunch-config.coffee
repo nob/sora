@@ -30,3 +30,19 @@ exports.config =
       options:
         includePaths: ['bower_components/bootstrap-sass-official/assets/stylesheets']
       allowCache: true
+    static:
+      processors: [
+        require('html-brunch-static') {
+          processors: [
+            require('marked-brunch-static') {
+              fileMatch: /\.(md|txt)$/
+              fileTransform: (f) -> f.replace(/\.\w+$/, '.html')
+            }
+          ]
+          handlebars: {
+            enableProcessor:
+              fileMatch: /\.(hbs|handlebars)$/
+              fileTransform: (f) -> f.replace(/\.\w+$/, '.html')
+          }
+        }
+      ]

@@ -1,3 +1,8 @@
+---
+_options:
+  partials:
+    - app/partials/footer.hbs
+---
 <!DOCTYPE html>
 <html>
 <head>
@@ -89,7 +94,7 @@
     .masthead,
     .mastfoot,
     .cover-container {
-      width: 700px;
+      width: 100%;
     }
   }
 
@@ -109,23 +114,10 @@
     <div class="site-wrapper-inner">
       <div class="cover-container">
         <div class="inner cover">
-          <h1 class="cover-heading">Have brown rice for brunch.<br/>No coffee.</h1>
-          <p class="lead">
-            Brunch skeleton for simple static pages, with Bootstrap
-            <p class="lead">
-              <a href="https://github.com/nob/brunch-brown-rice/blob/master/README.md" class="btn btn-lg btn-default ">
-                <i class="glyphicon glyphicon-book"></i>
-                Learn more
-              </a>
-              <a href="https://github.com/nob/brunch-brown-rice" class="btn btn-lg btn-default">
-                <i class="glyphicon glyphicon-thumbs-up"></i>
-                Fork/Star On Github
-              </a>
-            </p>
-          </div>
-          {{> footer}}
+          {{content}}
         </div>
       </div>
+      {{> footer}}
     </div>
 
     <!-- Require js files -->
