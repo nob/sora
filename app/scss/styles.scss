@@ -1,4 +1,57 @@
-//@import "bootstrap-compass";
-@import "_variables";
+// @import "_variables";
 @import "bootstrap_custom";
-//@import "compass";
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+body *{
+  font-family: 'Noto Sans Japanese', sans-serif;
+}
+.site-wrapper {
+  width: 100%;
+}
+header {
+  img, p {
+    display: block;
+    width: 800;
+    margin: 0px auto;
+    text-align: center;
+  }
+}
+section.photos {
+  .tab {
+    width: 1080px;
+    margin: 0px auto;
+  }
+  .images {
+    width: 800px;
+    margin: 0px auto;
+  }
+  .comingsoon {
+    width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    h3 {
+      margin-bottom: 30px;
+    }
+    .info {
+      background-image: url("../images/cafe-comingsoon.png");
+      background-repeat: no-repeat;
+      background-position: 150px 70px;
+    }
+  }
+}
+section.venue {
+  img, p {
+    display: block;
+    width: 800;
+    margin: 0px auto;
+    text-align: center;
+  }
+}
+footer {
+  img, p {
+    display: block;
+    width: 800;
+    margin: 0px auto;
+    text-align: center;
+  }
+}
