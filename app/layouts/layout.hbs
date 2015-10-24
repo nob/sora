@@ -12,7 +12,7 @@ title: 空十色
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Starter Template</title>
+  <title>{{title}}</title>
   <!-- Require app.css and vendor.css-->
   <link href="css/app.css" rel="stylesheet">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -24,10 +24,18 @@ title: 空十色
 </head>
 <body>
   <div class="site-wrapper">
-    {{> header}}
-    {{content}}
-    {{> venue}}
-    {{> footer}}
+    <header>
+      {{> header}}
+    </header>
+    <section class="photo">
+      {{content}}
+    </section>
+    <section class="venue">
+      {{> venue}}
+    </section>
+    <footer>
+      {{> footer}}
+    </footer>
   </div>
   <!-- Require js files -->
   <script src="js/jquery.js"></script>
