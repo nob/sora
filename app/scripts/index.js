@@ -10,13 +10,13 @@
     $('#cafe_gallery').packery(pakery_options);
 
     //Tab navigation
-    $('.nav-tabs a').click(function (e) {
+    $('.nav-pills a').click(function (e) {
       e.preventDefault()
       $(this).tab('show')
     });
 
     //init selected gallary again after other tab contents is shown.
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
       // e.target // newly activated tab
       // e.relatedTarget // previous active tab
 
