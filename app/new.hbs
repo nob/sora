@@ -2,47 +2,47 @@
 _options:
   layout: app/layouts/layout.hbs
 ---
-<section id="photo" class="container">
-  <div class="row menu">
-    <div class="col-xs-6">
-      <img src="/images/navi-cafe.jpg" class="img-responsive" alt="空十色" />
+<section id="galleries" class="container">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#cafe_gallery" aria-controls="cafe_gallery" role="tab" data-toggle="tab">
+        <img src="/images/navi-cafe.jpg" class="img-responsive" alt="空十色" />
+      </a>
+    </li>
+    <li role="presentation">
+      <a id="ooo" href="#zakka_gallery" aria-controls="zakka_gallery" role="tab" data-toggle="tab">
+        <img src="/images/navi-zakka.jpg" class="img-responsive" alt="空十色" />
+      </a>
+    </li>
+  </ul>
+
+ <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active gallery" id="cafe_gallery">
+      <div class="gutter-sizer"></div>
+      <img src="/gallery/9.jpg" class="pitem grid-sizer" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/1.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/10.jpg" class="pitem regular"alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/3.jpg" class="pitem"  alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/11.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/12.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/2.jpg" class="pitem regular" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/13.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/14.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/15.jpg" class="pitem regular" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/16.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/5.jpg" class="pitem regular" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/17.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/18.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/19.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
     </div>
-    <div class="col-xs-6">
-      <img src="/images/navi-zakka.jpg" class="img-responsive" alt="空十色" />
+    <div role="tabpanel" class="tab-pane fade gallery" id="zakka_gallery">
+      <div class="gutter-sizer"></div>
+      <img src="/gallery/6.jpg" class="pitem grid-sizer" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/7.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/4.jpg" class="pitem regular" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/8.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
     </div>
   </div>
-  <div class="gallery">
-    <div class="gutter-sizer"></div>
-    <img src="/gallery/6.jpg" class="grid-sizer" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/7.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/4.jpg" class="regular" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/8.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/9.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/1.jpg" class="regular" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/10.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/3.jpg" class="regular" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/11.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/12.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/2.jpg" class="regular" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/13.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/14.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/15.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/16.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/5.jpg" class="regular" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/17.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/18.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-    <img src="/gallery/19.jpg" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-  </div>
-  {{!-- <img src="/images/ari-ashi.jpg" alt="空十色" />
-  <img src="/images/ari-karada.jpg" alt="空十色" />
-  <img src="/images/budou-midori.jpg" alt="空十色" />
-  <img src="/images/budou-murasaki.jpg" alt="空十色" />
-  <img src="/images/neko-karada.jpg" alt="空十色" />
-  <img src="/images/neko-shippo.jpg" alt="空十色" />
-  <img src="/images/udon.jpg" alt="空十色" />
-  <img src="/images/hukidashi-remonman.jpg" alt="空十色" />
-  <img src="/images/new.jpg" alt="空十色" />
-  <img src="/images/tojiru-aka.jpg" alt="空十色" />
-  <img src="/images/tojiru-kuro.jpg" alt="空十色" />
-  <img src="/images/tojiru-kon.jpg" alt="空十色" /> --}}
 </section>
