@@ -16,7 +16,7 @@ HTML5 + Bootstrap Sass + jQuery application skelton, built with [Brunch](http://
     * Place static files you want to be copied from `app/assets/` to `public/`.
     * Place styles in `app/scss/` to be compiled to `public/css/app.css`
     * Place javascripts in `app/scripts` to be concatenated to `public/js/app.js`
-    * Static site generation is supported by [this Brunch plugin.](https://github.com/devinus/static-site-brunch)  Add Handlebars templates to app/templates and they will be automatically compiled and placed in your `public/` directory.
+    * Static site generation is supported by [this Brunch plugin.](https://github.com/devinus/static-site-brunch)  Add Handlebars templates to app/ and they will be automatically compiled and placed in your `public/` directory.
     * [Brunch site](http://brunch.io)
     * [Sass site](http://sass-lang.com)
     * [Bootstrap site](http://getbootstrap.com)
