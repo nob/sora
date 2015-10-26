@@ -74,6 +74,7 @@ section#galleries {
     }
     .grid-sizer,
     img {
+      cursor: pointer;
       width: 24%;
       &.regular {
         width: 49%;
