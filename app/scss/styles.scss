@@ -29,8 +29,8 @@ section#intro {
   width: 100%;
   height: 100%;
   text-align: center;
-  //div.v-h-centered needs to be vertically, horizontally centered in unknown height and width situation.
-  //Borrowd this tecnique from: https://css-tricks.com/centering-in-the-unknown/
+  //div.v-h-centered needs to be vertically, horizontally centered with unknown height and width situation.
+  //borrowd this tecnique: https://css-tricks.com/centering-in-the-unknown/
   &:before {
     content: '';
     display: inline-block;
@@ -95,6 +95,9 @@ section#venue {
   .info {
     margin-top: 30px;
     margin-left: -100px;
+    dd {
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -131,8 +134,5 @@ footer {
     background-image: url("../images/cafe-comingsoon.png");
     background-repeat: no-repeat;
     background-position: 150px 70px;
-    dd {
-      margin-bottom: 10px;
-    }
   }
 }
