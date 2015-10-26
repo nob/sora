@@ -1,57 +1,138 @@
-// @import "_variables";
 @import "bootstrap_custom";
 
+//Global font
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 body *{
   font-family: 'Noto Sans Japanese', sans-serif;
 }
+
+html,
+body {
+  height: 100%;
+}
+
+
+//Site wide styles.
 .site-wrapper {
   width: 100%;
+  height: 100%;
+  hr.tmp {
+    margin: 0px 0px;
+    padding: 0px 0px;
+    display: block;
+  }
 }
+
+//intro section
+section#intro {
+  background-color: #ECF8FB;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  //div.v-h-centered needs to be vertically, horizontally centered in unknown height and width situation.
+  //Borrowd this tecnique from: https://css-tricks.com/centering-in-the-unknown/
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+  }
+  .v-h-centered {
+    width: 85%;
+    display: inline-block;
+    vertical-align: middle;
+    img, h1 {
+      width: 100%;
+      margin: 0px auto;
+    }
+  }
+}
+
+//header
 header {
+  text-align: center;
+  margin-bottom: 50px;
+  img {
+    width: 40%;
+  }
+}
+
+//photo section
+section#photo {
+  .menu {
+    text-align: center;
+    margin-bottom: 10px;
+    img {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+  .gallery {
+    .gutter-sizer {
+      width: 1%;
+    }
+    .grid-sizer,
+    img {
+      width: 24%;
+      &.regular {
+        width: 49%;
+      }
+    }
+  }
+}
+
+//venue info section
+section#venue {
+  margin-top: 70px;
+  margin-bottom: 10px;
   img, p {
     display: block;
     width: 800;
     margin: 0px auto;
     text-align: center;
   }
-}
-section.photos {
-  .tab {
-    width: 1080px;
-    margin: 0px auto;
-  }
-  .images {
-    width: 800px;
-    margin: 0px auto;
-  }
-  .comingsoon {
-    width: 800px;
-    margin: 20px auto;
-    text-align: center;
-    h3 {
-      margin-bottom: 30px;
-    }
-    .info {
-      background-image: url("../images/cafe-comingsoon.png");
-      background-repeat: no-repeat;
-      background-position: 150px 70px;
-    }
+  .info {
+    margin-top: 30px;
+    margin-left: -100px;
   }
 }
-section.venue {
-  img, p {
-    display: block;
-    width: 800;
-    margin: 0px auto;
-    text-align: center;
-  }
-}
+
+//footer
 footer {
+  margin-top: 20px;
+  margin-bottom: 10px;
   img, p {
     display: block;
     width: 800;
     margin: 0px auto;
     text-align: center;
+  }
+}
+
+//Modal
+.modal{
+  .modal-body {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+//coming soon page.
+.comingsoon {
+  width: 800px;
+  margin: 20px auto;
+  text-align: center;
+  h3 {
+    margin-bottom: 30px;
+  }
+  .info {
+    background-image: url("../images/cafe-comingsoon.png");
+    background-repeat: no-repeat;
+    background-position: 150px 70px;
+    dd {
+      margin-bottom: 10px;
+    }
   }
 }
