@@ -1,7 +1,7 @@
 (function($){
 
+    // Layout photo gallery items usin Packery.
     var $container = $('.gallery');
-    // init
     $container.packery({
       itemSelector: '.gallery > img',
       gutter: '.gutter-sizer' ,
@@ -10,7 +10,7 @@
     });
 
 
-    //Modal
+    //Photo Modal
     $('#myModal').on('show.bs.modal', function (e) {
       console.log(e.relatedTarget);
       $('img', this).attr('src', $(e.relatedTarget).attr('src'));
