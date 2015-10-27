@@ -4,7 +4,6 @@
     var pakery_options = {
       itemSelector: '.pitem',
       gutter: '.gutter-sizer' ,
-      columnWidth: '.grid-sizer',
       percentPosition: true
     };
     $('#cafe_gallery').packery(pakery_options);
