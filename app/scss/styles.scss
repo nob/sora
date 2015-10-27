@@ -39,7 +39,7 @@ section#intro {
     margin-right: -0.25em; /* Adjusts for spacing */
   }
   .v-h-centered {
-    width: 85%;
+    width: 75%;
     display: inline-block;
     vertical-align: middle;
     img, h1 {
@@ -52,7 +52,8 @@ section#intro {
 //header
 header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-top: 60px;
+  margin-bottom: 40px;
   img {
     width: 40%;
   }
@@ -70,15 +71,26 @@ section#galleries {
   }
   .gallery {
     .gutter-sizer {
-      width: 1%;
+      width: 2%;
     }
     .grid-sizer,
     img {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
       cursor: pointer;
-      width: 24%;
+      width: 18%;
       &.regular {
-        width: 49%;
+        width: 36%;
       }
+    }
+  }
+}
+//Modal
+.modal{
+  .modal-body {
+    img {
+      width: 100%;
     }
   }
 }
@@ -114,14 +126,6 @@ footer {
   }
 }
 
-//Modal
-.modal{
-  .modal-body {
-    img {
-      width: 100%;
-    }
-  }
-}
 
 //coming soon page.
 .comingsoon {
