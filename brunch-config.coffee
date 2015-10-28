@@ -13,6 +13,10 @@ exports.config =
     stylesheets:
       joinTo:
         'css/app.css': /^(app[\\/]scss|vendor)/
+      order:
+        after: [
+          'vendor/bs_modal_transition.css'
+        ]
 
   modules:
     wrapper: false
