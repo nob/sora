@@ -26,7 +26,7 @@
 
     //Photo Modal
     $('#myModal').on('show.bs.modal', function (e) {
-      $('.photo > img', this).attr('src', $(e.relatedTarget).attr('src'));
+      $('.modal-body > img.photo', this).attr('src', $(e.relatedTarget).attr('src'));
     });
 
 })(window.jQuery);

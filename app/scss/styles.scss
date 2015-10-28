@@ -40,7 +40,7 @@ section#intro {
     margin-right: -0.25em; /* Adjusts for spacing */
   }
   .v-h-centered {
-    width: 75%;
+    width: 85%;
     display: inline-block;
     vertical-align: middle;
     img, h1 {
@@ -85,32 +85,81 @@ section#galleries {
         width: 36%;
       }
     }
+    img#ico-new-cafe,
+    img#ico-new-zakka{
+      // position: absolute;
+    }
   }
 }
 //Modal
 .modal{
-  .modal-body {
-    img {
-      width: 100%;
+  .modal-dialog {
+    margin: 80px auto;
+    .modal-body {
+      img.close {
+        position:absolute;
+        top: -3%;
+        right: -4%;
+        opacity: 1.0; //overwrite Bootstrap
+        filter: alpha(opacity=100); //overwrite Bootstrap
+      }
+      img.photo {
+        width: 100%;
+      }
+      img.comment-balloon {
+        width: 120%;
+        position: absolute;
+        top: 88%;
+        left: -10%;
+      }
+      p.photo-comment {
+        position: absolute;
+        top: 98%;
+        left: 21%;
+        width: 75%;
+      }
+    }
+  }
+  //Responsive styling for Modal.
+  @media screen and (max-width: 768px) {
+    .modal-dialog {
+      width: 85%;
+      .modal-body {
+        img.close {
+          top: -7%;
+          right: -6%;
+          width: 40px;
+        }
+      }
     }
   }
 }
 
-//venue info section
+//Venue Info section
 section#venue {
-  margin-top: 30px;
+  margin-top: 60px;
   margin-bottom: 10px;
   img, p {
     display: block;
     width: 800;
     margin: 0px auto;
-    text-align: center;
+    text-align: left;
   }
   .info {
-    margin-top: 30px;
-    margin-left: -100px;
+    // margin-left: -100px;
+    .vcard {
+      .country-name {
+        display: none;
+      }
+    }
     dd {
       margin-bottom: 10px;
+    }
+  }
+  //Responsive styling for Venue Info section.
+  @media screen and (max-width: 992px) {
+    .info {
+      margin-left: 0px;
     }
   }
 }
