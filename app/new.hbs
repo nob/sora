@@ -1,6 +1,21 @@
 ---
 _options:
   layout: app/layouts/layout.hbs
+TODO:
+  - Venue info layout (responsive)
+  - Venue info Map popup (Mobile only)
+  - Intoro screen effect (JS).
+  - Tab navigation layout (responsive)
+  - new photo(cafe and zakka)icon positioning. (JS)
+  - Change font.
+  - Character clipping & animation & layout (responsive)
+  - Site Background color with CSS3 liner gradation.
+  - photo frame (handwriting)
+  
+  - Actual photo and comment insertion.
+
+  - Image size optimization (and image sprite?)
+  - Instagram integration.
 ---
 <section id="galleries" class="container">
   <!-- Nav tabs -->
@@ -20,10 +35,11 @@ _options:
  <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active gallery" id="cafe_gallery">
+      <img src="/images/ico-new.png" alt="" id="ico-new-cafe"/>
       <div class="gutter-sizer"></div>
       <img src="/gallery/9.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
       <img src="/gallery/1.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-      <img src="/gallery/10.jpg" class="pitem regular"alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/10.jpg" class="pitem regular"alt="空十色" data-toggle="modal" data-target="#myModal" id="photo-new-cafe"/>
       <img src="/gallery/3.jpg" class="pitem"  alt="空十色" data-toggle="modal" data-target="#myModal"/>
       <img src="/gallery/11.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
       <img src="/gallery/12.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
@@ -38,10 +54,11 @@ _options:
       <img src="/gallery/19.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
     </div>
     <div role="tabpanel" class="tab-pane fade gallery" id="zakka_gallery">
+      <img src="/images/ico-new.png" alt="" id="ico-new-zakka"/>
       <div class="gutter-sizer"></div>
       <img src="/gallery/6.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
       <img src="/gallery/7.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
-      <img src="/gallery/4.jpg" class="pitem regular" alt="空十色" data-toggle="modal" data-target="#myModal"/>
+      <img src="/gallery/4.jpg" class="pitem regular" alt="空十色" data-toggle="modal" data-target="#myModal" id="photo-new-zakka"/>
       <img src="/gallery/8.jpg" class="pitem" alt="空十色" data-toggle="modal" data-target="#myModal"/>
     </div>
   </div>
