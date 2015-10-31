@@ -8,7 +8,10 @@ body *{
 
 html,
 body {
-  height: 100%;
+  // @include gradient-vertical-three-colors(#ffffff, #f2d396, 60%, #57bff0);
+  background-image: -webkit-linear-gradient(#ffffff 84%, #bbe7fc, #f2d396);
+  // background-image: -webkit-linear-gradient(#f2d396, #bbe7fc, #ffffff 20%);
+  // background-image: -webkit-linear-gradient(#bbe7fc, #f2d396, #ffffff 20%);
 }
 
 
@@ -25,7 +28,7 @@ body {
 
 //intro section
 section#intro {
-  // background-color: #ECF8FB;
+display: none;
   background-color: #FFFFFF;
   width: 100%;
   height: 100%;
@@ -54,9 +57,9 @@ section#intro {
 header {
   text-align: center;
   margin-top: 60px;
-  margin-bottom: 40px;
+  margin-bottom: 110px;
   img {
-    width: 40%;
+    width: 35%;
   }
 }
 
@@ -64,10 +67,30 @@ header {
 section#galleries {
   .nav-pills {
     text-align: center;
-    margin-bottom: 10px;
-    img {
-      width: 50%;
-      margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 0 180px;
+    li {
+      width: 36%;
+      a {
+        @include border-top-radius(50%);
+        @include border-bottom-radius(50%);
+        img {
+          width: 100%;
+          margin: -17% auto 0;
+        }
+      }
+      &:nth-child(2) {
+        float: right;
+      }
+      &.active {
+        width: 55%;
+        a[href='#cafe_gallery'] {
+          background-color: #F29AAD;
+        }
+        a[href='#zakka_gallery'] {
+          background-color: #BBE7FC;
+        }
+      }
     }
   }
   .gallery {
@@ -85,9 +108,20 @@ section#galleries {
         width: 36%;
       }
     }
-    img#ico-new-cafe,
+    img#ico-new-cafe {
+    }
     img#ico-new-zakka{
-      // position: absolute;
+    }
+  }
+  #cafe_gallery {
+    img.pitem {
+      box-shadow: -3px 5px 1px rgba(242, 154, 173, 0.7);
+    }
+
+  }
+  #zakka_gallery {
+    img.pitem {
+      box-shadow: -3px 5px 1px rgba(187, 231, 252, 0.9);
     }
   }
 }
@@ -146,7 +180,7 @@ section#venue {
     text-align: left;
   }
   .info {
-    // margin-left: -100px;
+    margin-top: 220px;
     .vcard {
       .country-name {
         display: none;
@@ -166,7 +200,7 @@ section#venue {
 
 //footer
 footer {
-  margin-top: 20px;
+  margin-top: 220px;
   margin-bottom: 10px;
   img, p {
     display: block;
