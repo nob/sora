@@ -1,0 +1,15 @@
+TODO:
+  - Intoro screen effect (JS).
+  - new photo(cafe and zakka)icon positioning. (JS)
+  - Character clipping & animation & layout (responsive)
+
+  With Fukushima.
+  - Actual photo and comment insertion.
+
+  After Release:
+    - Choose Better font
+    Mobile (responsive):
+      - Venue info layout
+      - Venue info Map popup
+    - Instagram integration
+    - Image size optimization (and image sprite?)
