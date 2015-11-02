@@ -1,5 +1,6 @@
 (function($){
 
+  function initGallery() {
     // Layout photo gallery items using Packery.
     var packery_options = {
       itemSelector: '.pitem',
@@ -22,17 +23,27 @@
       var gal_id = $(this).attr('href');
       $(gal_id).packery(packery_options);
     });
+  }
 
 
-    //Tab navigation
-    $('.nav-pills a').click(function (e) {
-      e.preventDefault()
-      $(this).tab('show')
+  //Tab navigation
+  $('.nav-pills a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  });
+
+  //Set designated photo when a modal activation.
+  $('#myModal').on('show.bs.modal', function (e) {
+    $('.modal-body > img.photo', this).attr('src', $(e.relatedTarget).attr('src'));
+  });
+
+  //Start fading Intro, now!
+  (function () {
+    $('#intro').delay(3000).fadeOut(1500, function(){
+      $('.site-wrapper').show();
+      initGallery();
+      $('body').addClass('shown');
     });
-
-    //Set designated photo when a modal activation.
-    $('#myModal').on('show.bs.modal', function (e) {
-      $('.modal-body > img.photo', this).attr('src', $(e.relatedTarget).attr('src'));
-    });
+  })();
 
 })(window.jQuery);
