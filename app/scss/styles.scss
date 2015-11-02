@@ -3,7 +3,8 @@
 //Global font
 @font-face {
     font-family: UzuraSubset;
-    src: url(../fonts/uzura_subset.ttf);
+    src: url(../fonts/uzura_subset.ttf),
+         url(../fonts/uzura_subset.woff);
 }
 //Font for .photo-comment
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
