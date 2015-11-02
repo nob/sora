@@ -1,9 +1,15 @@
 @import "bootstrap_custom";
 
 //Global font
+@font-face {
+    font-family: UzuraSubset;
+    src: url(../fonts/uzura_subset.ttf);
+}
+//Font for .photo-comment
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
 body *{
-  font-family: 'Noto Sans Japanese', sans-serif;
+  font-family: 'UzuraSubset', sans-serif;
 }
 
 html,
@@ -57,7 +63,10 @@ display: none;
 header {
   text-align: center;
   margin-top: 60px;
-  margin-bottom: 110px;
+  margin-bottom: 90px;
+  .msg {
+    margin-top: 20px;
+  }
   img {
     width: 35%;
   }
@@ -148,6 +157,7 @@ section#galleries {
       }
       p.photo-comment {
         position: absolute;
+        font-family: 'Noto Sans Japanese', sans-serif;
         top: 98%;
         left: 21%;
         width: 75%;
