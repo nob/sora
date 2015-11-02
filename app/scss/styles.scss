@@ -176,6 +176,7 @@ section#galleries {
 
 //Venue Info section
 section#venue {
+  position: relative;
   margin-top: 60px;
   margin-bottom: 10px;
   img, p {
@@ -194,6 +195,41 @@ section#venue {
     dd {
       margin-bottom: 10px;
     }
+  }
+  img.ari {
+    position: absolute;
+    width: 90px;
+    top: 350px;
+    left: 250px;
+    z-index: 11;
+  }
+  img.ari-ashi {
+    position: absolute;
+    width: 90px;
+    top: 380px;
+    left: 260px;
+    z-index: 10;
+  }
+  img.neko {
+    position: absolute;
+    width: 140px;
+    top: 60px;
+    right: 350px;
+    z-index: 11;
+  }
+  img.neko-shippo {
+    position: absolute;
+    width: 140px;
+    top: 75px;
+    right: 380px;
+    z-index: 10;
+  }
+  img.udon {
+    position: absolute;
+    width: 90px;
+    top: 40px;
+    right: 150px;
+    z-index: 10;
   }
   //Responsive styling for Venue Info section.
   @media screen and (max-width: 992px) {
