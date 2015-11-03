@@ -14,9 +14,9 @@ body *{
 }
 
 body.shown {
-  background-image: -webkit-linear-gradient(#ffffff 84%, #bbe7fc, #f2d396);
+  background-image: -webkit-linear-gradient(#ffffff 14%, #bbe7fc, #f2d396);
   background-image: -o-linear-gradient(#ffffff 84%, #bbe7fc, #f2d396);
-  background-image: linear-gradient(#ffffff 84%, #bbe7fc, #f2d396);
+  background-image: linear-gradient(#ffffff 14%, #bbe7fc, #f2d396);
   background-repeat: repeat-x;
 }
 
@@ -92,7 +92,7 @@ section#galleries {
           background-color: #F29AAD;
         }
         a[href='#zakka_gallery'] {
-          background-color: #BBE7FC;
+          background-color: #5FC0EC;
         }
       }
     }
@@ -125,7 +125,7 @@ section#galleries {
   }
   #zakka_gallery {
     img.pitem {
-      box-shadow: -3px 5px 1px rgba(187, 231, 252, 0.9);
+      box-shadow: -3px 5px 1px rgba(95, 192 , 236, 0.9);
     }
   }
 }
