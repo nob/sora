@@ -13,10 +13,6 @@ exports.config =
     stylesheets:
       joinTo:
         'css/app.css': /^(app[\\/]scss|vendor)/
-      order:
-        after: [
-          'vendor/bs_modal_transition.css'
-        ]
 
   modules:
     wrapper: false
@@ -31,8 +27,6 @@ exports.config =
     sass:
       debug: 'comments' # or set to 'debug' for the FireSass-style output
       mode: 'ruby' # set to 'native' to force libsass
-      options:
-        includePaths: ['bower_components/bootstrap-sass-official/assets/stylesheets']
       allowCache: true
     static:
       processors: [

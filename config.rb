@@ -1,4 +1,3 @@
-add_import_path "bower_components/bootstrap-sass-official/assets/stylesheets"
 require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 
