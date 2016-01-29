@@ -1,3 +1,22 @@
+section#intro {
+  background-color: #FFFFFF;
+  text-align: center;
+  img, h1 {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-top: -226.5px;
+    margin-left: -300px;
+    @media (max-width: 600px) {
+      width: 300px;
+      margin-top: -113.25px;
+      margin-left: -150px;
+    }
+  }
+}
+.w-section {
+  display: none;
+}
 h1 {
   margin-top: 4px;
   margin-bottom: 10px;
