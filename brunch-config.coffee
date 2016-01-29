@@ -13,6 +13,11 @@ exports.config =
     stylesheets:
       joinTo:
         'css/app.css': /^(app[\\/]scss|vendor)/
+      order:
+        before: [
+          'vendor/normalize.css',
+          'vendor/webflow.css'
+        ]
 
   modules:
     wrapper: false
