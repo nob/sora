@@ -122,6 +122,7 @@ img {
 
 .event-img {
   display: block;
+  position: relative;
   width: 220px;
   height: 220px;
   margin-right: 7px;
@@ -129,6 +130,10 @@ img {
   border-color: #faf2df;
   box-shadow: #978f8f 2px 2px 3px 0px;
   cursor: pointer;
+  img {
+    width: 220px;
+    height: 220px;
+  }
   &:hover {
     opacity: 1;
   }
@@ -229,7 +234,7 @@ img {
 
 .col2 {
   margin-top: 0px;
-  padding: 9px;
+  padding: 0px;
 }
 
 .services-cont {
@@ -419,6 +424,13 @@ img {
   margin-right: auto;
   margin-left: auto;
   background-color: rgba(41, 42, 42, 0.52);
+  i.icon {
+    color: #FFF;
+    z-index: 3;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
 }
 
 .brand-title-txt {
@@ -512,7 +524,7 @@ img {
   display: block;
   font-family: source-han-sans-japanese, sans-serif;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   text-align: center;
 }
@@ -523,10 +535,10 @@ img {
   z-index: 2;
   display: block;
   width: 144px;
-  height: 40px;
+  height: 28px;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 7px;
+  padding-top: 4px;
   padding-left: 0px;
   background-color: rgba(0, 0, 0, 0.48);
   cursor: pointer;
@@ -535,9 +547,19 @@ img {
     z-index: 2;
     display: block;
     width: 214px;
-    height: 50px;
+    height: 35px;
     margin-left: 3px;
     padding-top: 10px;
+    .event-date {
+      font-size: 16px;
+    }
+  }
+  i.icon {
+    color: #FFF;
+    z-index: 3;
+    position: absolute;
+    top: 20%;
+    right: 5%;
   }
 }
 
@@ -617,6 +639,14 @@ img {
   border: 3px solid #faf2df;
   border-radius: 2px;
   box-shadow: #978f8f 2px 2px 3px 0px;
+  i.icon {
+    color: #FFF;
+    z-index: 3;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 18px;
+  }
 }
 
 .announcement {
@@ -729,10 +759,10 @@ img {
 
 .to-instagram-txt {
   position: absolute;
-  left: 80px;
+  left: 55px;
   z-index: 1;
   display: block;
-  padding-top: 10px;
+  padding-top: 0px;
   float: left;
   color: #2d44bb;
   font-size: 18px;
@@ -805,11 +835,11 @@ html.w-mod-js * {
     font-size: 15px;
   }
   .event-date {
-    font-size: 14px;
+    font-size: 13px;
   }
   .event-overlay {
     width: 95%;
-    height: 30px;
+    height: 27px;
     &.event-overlay-last {
       left: 0px;
       right: 0px;
@@ -878,10 +908,15 @@ html.w-mod-js * {
   .service-block.cafe {
     margin-left: 0px;
   }
-  .event-img.last {
-    margin-right: 8px;
-    margin-left: 0px;
-    float: left;
+  .recent-event {
+    width: 127px;
+  }
+  .event-img {
+    &.last {
+      margin-right: 8px;
+      margin-left: 0px;
+      float: left;
+    }
   }
   .main-img {
     top: 450px;
@@ -931,7 +966,7 @@ html.w-mod-js * {
     bottom: 8px;
   }
   .event-overlay {
-    width: 96%;
+    width: 121px;
     padding-top: 4px;
     &.event-overlay-last {
       left: 3px;
@@ -948,10 +983,6 @@ html.w-mod-js * {
     width: 350px;
     margin-right: auto;
     margin-left: auto;
-  }
-  .recent-event {
-    width: 165px;
-    height: 165px;
   }
   .lunch-menu {
     display: block;
@@ -994,10 +1025,33 @@ html.w-mod-js * {
   .tel, .laddr {
     display: block;
   }
-  .ari-tmp-s {
-    position: absolute;
-    left: 50px;
-    bottom: 440px;
+  .brand-item {
+    width: 200px;
+    height: 120px;
+  }
+  .brand-title {
+    width: 194px;
+    height: 30px;
+    .brand-title-txt {
+      padding-top: 6px;
+      font-size: 16px;
+    }
+  }
+  .map-small {
+    position: relative;
+    .ari-tmp-s {
+      position: absolute;
+      top: 10%;
+      right: 10%;
+    }
+    i.icon {
+      position: absolute;
+      top: 35%;
+      right: 50%;
+      font-size: 30px;
+      color: rgba(128, 128, 128, .6);
+      // color: rgba(0, 0, 238, 0.8);
+    }
   }
 }
 
@@ -1132,7 +1186,7 @@ html.w-mod-js * {
     bottom: 8px;
   }
   .lunch-menu-title {
-    font-size: 13px;
+    font-size: 15px;
   }
   .lunch-menu-item {
     padding-left: 8px;
@@ -1146,18 +1200,32 @@ html.w-mod-js * {
   }
   .event-overlay {
     position: absolute;
-    width: 100%;
+    width: 78px;
     height: 20px;
+    bottom: 0px;
     padding-top: 0px;
     font-size: 14px;
+    i.icon {
+      position: absolute;
+      top: -30px;
+      left: 10px;
+      font-size: 20px;
+    }
     &.event-overlay-last {
-      left: 0px;
-      top: 168px;
+      left: 2px;
+      top: 182px;
       right: 0px;
+      width: 214px;
       display: block;
-      max-width: 100%;
       margin-right: auto;
       margin-left: auto;
+      i.icon {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        left: auto;
+        font-size: 20px;
+      }
     }
   }
   .tea-img {
@@ -1173,8 +1241,8 @@ html.w-mod-js * {
   .recent-event {
     position: relative;
     display: block;
-    width: 95px;
-    height: 95px;
+    width: 84px;
+    height: 84px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -1246,10 +1314,17 @@ html.w-mod-js * {
   .to-instagram-txt {
     left: 20px;
   }
-  .ari-tmp-s {
-    position: absolute;
-    left: 20px;
-    bottom: 360px;
+  .brand-item {
+    width: 220px;
+    height: 132px;
+  }
+  .brand-title {
+    width: 213px;
+    height: 33px;
+    .brand-title-txt {
+      padding-top: 9px;
+      font-size: 18px;
+    }
   }
 }
 
