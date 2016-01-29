@@ -343,7 +343,11 @@ img {
     text-decoration: underline;
   }
 }
-
+.icon {
+  &.icon-search-plus {
+    display: none;
+  }
+}
 .announcement-txt {
   position: absolute;
   left: 170px;
@@ -357,12 +361,16 @@ img {
   font-family: source-han-sans-japanese, sans-serif;
   color: #315fd6;
   font-size: 15px;
+  font-weight: bold;
   font-style: normal;
   text-decoration: underline;
   cursor: pointer;
   &:hover {
     color: #529ff1;
-    font-weight: 400;
+    font-weight: bold;
+  }
+  i.icon {
+    font-size: 22px;
   }
 }
 
@@ -812,6 +820,11 @@ html.w-mod-js * {
 }
 
 @media (max-width: 991px) {
+  .icon {
+    &.icon-search-plus {
+      display: inline;
+    }
+  }
   .service-block.cafe {
     margin-left: 0px;
   }
@@ -975,9 +988,9 @@ html.w-mod-js * {
     width: 200px;
   }
   .announcement-txt {
-    left: 130px;
-    top: 33px;
-    width: 375px;
+    left: 23%;
+    top: 32px;
+    width: 65%;
   }
   .brand-title {
     left: 13px;
@@ -1189,14 +1202,17 @@ html.w-mod-js * {
   }
   .announcement-txt {
     position: absolute;
-    left: 79px;
-    top: 15px;
+    left: 25%;
+    top: 15%;
     display: block;
-    width: 67%;
+    width: 64%;
     height: 120%;
     margin-right: auto;
     margin-left: auto;
     font-size: 13px;
+    i.icon {
+      font-size: 17px;
+    }
   }
   .brand-title {
     position: absolute;
