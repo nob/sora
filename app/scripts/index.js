@@ -18,8 +18,8 @@
         var low_res_url = ig_items[i].images.low_resolution.url;
         var std_res_url = ig_items[i].images.standard_resolution.url;
         var thn_res_url = ig_items[i].images.thumbnail.url;
-        var shot_date = new Date(Number(ig_items[i].created_time + '000'));
-        var shot_date_str = (shot_date.getMonth() + 1) + '月' + shot_date.getDate() + '日';
+        // var shot_date = new Date(Number(ig_items[i].created_time + '000'));
+        // var shot_date_str = (shot_date.getMonth() + 1) + '月' + shot_date.getDate() + '日';
         var caption = ig_items[i].caption.text;
         caption = caption.replace(/(#.+\s|#.+$)/g, ''); //eliminate tags from caption.
 
@@ -28,7 +28,8 @@
             "url": std_res_url,
             "width": 640,
             "height": 640,
-            "caption": "[" + shot_date_str + "] " + caption,
+            //"caption": "[" + shot_date_str + "] " + caption,
+            "caption": caption,
             "type": "image"
           }]
         };
@@ -38,7 +39,7 @@
         }
 
         $lb_elm.find('[class*="-img"]').attr('src', low_res_url); //set images.
-        $lb_elm.find('[class*="-date"]').text(shot_date_str); //set date.
+        // $lb_elm.find('[class*="-date"]').text(shot_date_str); //set date.
 
         var trim_length = (elm_class_name == 'ig-news') ? 45 : 160;
         trimmed_caption = caption.substring(0, trim_length) + '...';
@@ -87,7 +88,7 @@
     // Get an instance of a fetcher for Instagram API.
     var fetcher = new Instafetch('81e3d3f35c8a4438964001decaa5a31f');
     getIGitems(fetcher, 4, 'イベント', 'ig-event');
-    getIGitems(fetcher, 1, 'ニュース', 'ig-news');
+    getIGitems(fetcher, 1, 'おしらせ', 'ig-news');
     getIGitems(fetcher, 1, 'ごはん', 'ig-lunch');
   });
 

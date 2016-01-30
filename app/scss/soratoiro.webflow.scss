@@ -567,7 +567,8 @@ img {
   margin-left: auto;
   padding-top: 4px;
   padding-left: 0px;
-  background-color: rgba(0, 0, 0, 0.48);
+  // background-color: rgba(0, 0, 0, 0.48);
+  background-color: rgba(0, 0, 0, 0.0);
   cursor: pointer;
   &.event-overlay-last {
     position: absolute;
