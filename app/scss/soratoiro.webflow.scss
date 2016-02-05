@@ -209,7 +209,7 @@ img {
   opacity: 1;
   font-family: 'ant maru subset', sans-serif;
   color: #ebe4e4;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 35px;
   font-weight: 400;
   text-align: center;
@@ -544,6 +544,9 @@ img {
 
 .store-hours {
   text-align: left;
+  p {
+    padding-left: 15px;
+  }
 }
 
 .event-date {
@@ -721,8 +724,8 @@ img {
 
 .open-img {
   position: absolute;
-  left: 60px;
-  bottom: -210px;
+  left: 160px;
+  bottom: -150px;
   z-index: 3;
 }
 
@@ -906,7 +909,7 @@ html.w-mod-js * {
     right: 5px;
   }
   .foot-bg {
-    position: static;
+    position: relative;
     height: 100%;
     background-position: 50% 14px;
     background-size: cover;
