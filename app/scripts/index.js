@@ -56,8 +56,8 @@
     }
 
     fetcher.fetch({
-      user: 1980581384, // This is the ID for sora_to_iro, you can get the ID from username using http://jelled.com/instagram/lookup-user-id
-      // user: 2536296892, // This is the ID for jointanet, you can get the ID from username using http://jelled.com/instagram/lookup-user-id
+      user: 1980581384, // get sora_to_iro's photos, you can get this ID by username using http://jelled.com/instagram/lookup-user-id
+      // user: 2536296892, // get jointanet's photos, you can get this ID by username using http://jelled.com/instagram/lookup-user-id
       tag: tag_name,
       limit: limit,
       callback: setIGitems, // You can customize your own functionality by building from the logResults method
@@ -66,8 +66,8 @@
   }
 
   //Start fading Intro.
-  $('#intro').delay(2000).fadeOut(1000, function(){
-  // $('#intro').delay(0).fadeOut(0, function(){
+  // $('#intro').delay(2000).fadeOut(1000, function(){
+  $('#intro').delay(0).fadeOut(0, function(){ //Skip intro for testing.
     //Show main sections.
     $('.w-section').show();
     /**
@@ -91,8 +91,5 @@
     getIGitems(fetcher, 1, 'おしらせ', 'ig-news');
     getIGitems(fetcher, 1, 'ごはん', 'ig-lunch');
   });
-
-
-
 
 })(window.jQuery);
