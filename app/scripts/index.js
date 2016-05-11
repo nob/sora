@@ -56,8 +56,8 @@
     }
 
     fetcher.fetch({
-      user: 1980581384, // get sora_to_iro's photos, you can get this ID by username using http://jelled.com/instagram/lookup-user-id
-      // user: 2536296892, // get jointanet's photos, you can get this ID by username using http://jelled.com/instagram/lookup-user-id
+      user: 1980581384, // fetch sora_to_iro's photos. You can get this ID by username using http://jelled.com/instagram/lookup-user-id
+      // user: 2536296892, // fetch jointanet's photos. You can get this ID by username using http://jelled.com/instagram/lookup-user-id
       tag: tag_name,
       limit: limit,
       callback: setIGitems, // You can customize your own functionality by building from the logResults method
