@@ -67,8 +67,8 @@
   // Start from here.
   //
   ////////////////
-  // $('#intro').delay(2000).fadeOut(1000, function(){ //Start fading the intro
-  $('#intro').delay(0).fadeOut(0, function(){ //Skip intro for testing.
+  $('#intro').delay(2000).fadeOut(1000, function(){ //Start fading the intro
+  // $('#intro').delay(0).fadeOut(0, function(){ //Skip intro for testing.
     //Show main sections.
     $('.w-section').show();
     /**
