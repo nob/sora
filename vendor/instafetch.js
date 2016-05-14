@@ -59,6 +59,9 @@ Instafetch.prototype.fetch = function(params) {
           format: "json"
       },
       success: function(response) {
+        console.log('================================');
+        console.log('success response: ');
+        console.log(response);
         /* FILTER */
         // If only one parameter is specified, no need to filter
         if(params.hasOwnProperty('user') != params.hasOwnProperty('tag')) {
@@ -99,6 +102,13 @@ Instafetch.prototype.fetch = function(params) {
             tmpArr: filteredArr
           });
         }
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log('================================');
+        console.log('error status: ');
+        console.log(textStatus);
+        console.log('errorThrown: ');
+        console.log(errorThrown);
       }
   });
 }

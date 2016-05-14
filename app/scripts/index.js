@@ -5,10 +5,6 @@
   function getIGitems(fetcher, limit, tag_name, elm_class_name) {
 
     var setIGitems = function(response, params) {
-      console.log('==== API fetched. Results below. ======');
-      console.log(response);
-      console.log('=======================================');
-
       var $lightbox_elms = $('.w-lightbox.' + elm_class_name);
       var ig_items = response.data;
 
