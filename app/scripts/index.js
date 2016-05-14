@@ -87,8 +87,8 @@
     ]);
 
     // Get an instance of a fetcher for Instagram API.
-    // var fetcher = new Instafetch('81e3d3f35c8a4438964001decaa5a31f'); //IG client ID of Instafetch author.
-    var fetcher = new Instafetch('71b0391fbade412eb51cb5e041dc62fb'); //IG client ID of sora_to_iro.
+    var fetcher = new Instafetch('81e3d3f35c8a4438964001decaa5a31f'); //IG client ID of Instafetch author.
+    // var fetcher = new Instafetch('71b0391fbade412eb51cb5e041dc62fb'); //IG client ID of sora_to_iro.
     getIGitems(fetcher, 4, 'イベント', 'ig-event');
     getIGitems(fetcher, 1, 'おしらせ', 'ig-news');
     getIGitems(fetcher, 1, 'ごはん', 'ig-lunch');
