@@ -3,14 +3,10 @@
    * Fetch posts data from Instagram via it's API and set them to the specific DOM in page.
    */
   function getIGitems(fetcher, limit, tag_name, elm_class_name) {
-
     var setIGitems = function(response, params) {
-      var $lightbox_elms = $('.w-lightbox.' + elm_class_name);
+
       var ig_items = response.data;
-
       for(var i = 0; i < ig_items.length; i++) {
-        var $lb_elm = $lightbox_elms.eq(i);
-
         var low_res_url = ig_items[i].images.low_resolution.url;
         var std_res_url = ig_items[i].images.standard_resolution.url;
         var thn_res_url = ig_items[i].images.thumbnail.url;
@@ -18,7 +14,6 @@
         // var shot_date_str = (shot_date.getMonth() + 1) + '月' + shot_date.getDate() + '日';
         var caption = ig_items[i].caption.text;
         caption = caption.replace(/(#.+\s|#.+$)/g, ''); //eliminate tags from caption.
-
         var lightbox_config = {
           "items": [{
             "url": std_res_url,
@@ -34,21 +29,27 @@
           lightbox_config.group = elm_class_name;
         }
 
+        /////
+        //Start modifying lightbox element and it's descendant with data fetched from IG.
+        ////
+        var $lightbox_elms = $('.' + elm_class_name);
+        var $lb_elm = $lightbox_elms.eq(i);
+        $lb_elm.attr('href', '#'); //Replace href attr value to "#"
+        $lb_elm.addClass('w-lightbox');//Put 'w-lightbox' class back to the element.
         $lb_elm.find('[class*="-img"]').attr('src', low_res_url); //set images.
         // $lb_elm.find('[class*="-date"]').text(shot_date_str); //set date.
-
         var trim_length = (elm_class_name == 'ig-news') ? 45 : 160;
         trimmed_caption = caption.substring(0, trim_length) + '...';
         $lb_elm.find('[class*="-caption"]').text(trimmed_caption); // set caption.
-
-        //Replace lightbox JSON configurations.
-        $lb_elm.find('.w-json').html(JSON.stringify(lightbox_config));
-
-        // TODO: stop 1st lightbox Initialization.
-        // TODO: call ready() just one time outside of this function.
-        // Initialize lightbox again with newly set configurations.
-        Webflow.require('lightbox').ready();
+        $lb_elm.find('.w-json').html(JSON.stringify(lightbox_config)); //Replace lightbox JSON configurations.
       }
+
+      /////
+      // Initialize lightbox again with newly set configurations.
+      //  TODO: Need to remove 1st ready() call for lightbox initialization outside of this function?
+      /////
+      Webflow.require('lightbox').ready();
+
     }
 
     fetcher.fetch({
@@ -61,8 +62,12 @@
     });
   }
 
-  //Start fading Intro.
-  // $('#intro').delay(2000).fadeOut(1000, function(){
+  ////////////////
+  //
+  // Start from here.
+  //
+  ////////////////
+  // $('#intro').delay(2000).fadeOut(1000, function(){ //Start fading the intro
   $('#intro').delay(0).fadeOut(0, function(){ //Skip intro for testing.
     //Show main sections.
     $('.w-section').show();
@@ -82,8 +87,8 @@
     ]);
 
     // Get an instance of a fetcher for Instagram API.
-    var fetcher = new Instafetch('81e3d3f35c8a4438964001decaa5a31f'); //IG client ID of Instafetch author.
-    // var fetcher = new Instafetch('71b0391fbade412eb51cb5e041dc62fb'); //IG client ID of sora_to_iro.
+    // var fetcher = new Instafetch('81e3d3f35c8a4438964001decaa5a31f'); //IG client ID of Instafetch author.
+    var fetcher = new Instafetch('71b0391fbade412eb51cb5e041dc62fb'); //IG client ID of sora_to_iro.
     getIGitems(fetcher, 4, 'イベント', 'ig-event');
     getIGitems(fetcher, 1, 'おしらせ', 'ig-news');
     getIGitems(fetcher, 1, 'ごはん', 'ig-lunch');

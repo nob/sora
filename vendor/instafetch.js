@@ -59,55 +59,59 @@ Instafetch.prototype.fetch = function(params) {
           format: "json"
       },
       success: function(response) {
-        console.log('================================');
-        console.log('success response: ');
-        console.log(response);
-        /* FILTER */
-        // If only one parameter is specified, no need to filter
-        if(params.hasOwnProperty('user') != params.hasOwnProperty('tag')) {
-          filteredArr = filteredArr.concat(response.data);
-        }
-        // Otherwise, since user data is always fetched first, filter by tag
-        else {
-          for(var i = 0; i < response.data.length; i++) {
-            if(response.data[i].tags.indexOf(params.tag) > -1) {
-              filteredArr.push(response.data[i]);
+        if (response.meta.code == 200) {
+          console.log('================================');
+          console.log('Success response from IG API: ');
+          console.log(response);
+          /* FILTER */
+          // If only one parameter is specified, no need to filter
+          if(params.hasOwnProperty('user') != params.hasOwnProperty('tag')) {
+            filteredArr = filteredArr.concat(response.data);
+          }
+          // Otherwise, since user data is always fetched first, filter by tag
+          else {
+            for(var i = 0; i < response.data.length; i++) {
+              if(response.data[i].tags.indexOf(params.tag) > -1) {
+                filteredArr.push(response.data[i]);
+              }
             }
           }
-        }
+          /* CHECK */
+          // Check if the limit has been reached, or if no more images are available
+          if((~~filteredArr.length) >= params.limit || typeof response.pagination.next_max_id === 'undefined') {
 
-        /* CHECK */
-        // Check if the limit has been reached, or if no more images are available
-        if((~~filteredArr.length) >= params.limit || typeof response.pagination.next_max_id === 'undefined') {
+            // Structure the returnObj in a similar fashion to how Instagram returns it
+            var returnObj = {};
+            returnObj.data = [];
 
-          // Structure the returnObj in a similar fashion to how Instagram returns it
-          var returnObj = {};
-          returnObj.data = [];
-
-          // Ensures only return up to the limit, or the number available, whichever is smaller
-          for(var j = 0; j < Math.min(filteredArr.length, params.limit); j++) {
-            returnObj.data.push(filteredArr[j]);
-          }
-          if(params.hasOwnProperty('callback')) {
-            params.callback(returnObj, params.params);
+            // Ensures only return up to the limit, or the number available, whichever is smaller
+            for(var j = 0; j < Math.min(filteredArr.length, params.limit); j++) {
+              returnObj.data.push(filteredArr[j]);
+            }
+            if(params.hasOwnProperty('callback')) {
+              params.callback(returnObj, params.params);
+            }
+          } else {
+            parent.fetch({
+              user: params.user,
+              tag: params.tag,
+              limit: params.limit,
+              callback: params.callback,
+              params: params.params,
+              maxId: response.pagination.next_max_id,
+              tmpArr: filteredArr
+            });
           }
         } else {
-          parent.fetch({
-            user: params.user,
-            tag: params.tag,
-            limit: params.limit,
-            callback: params.callback,
-            params: params.params,
-            maxId: response.pagination.next_max_id,
-            tmpArr: filteredArr
-          });
+          console.log('================================');
+          console.log('ERROR response form IG API: ');
+          console.log('  ' + response.meta.error_type + ': ' +response.meta.error_message);
         }
       },
       error: function(jqXHR, textStatus, errorThrown) {
         console.log('================================');
-        console.log('error status: ');
-        console.log(textStatus);
-        console.log('errorThrown: ');
+        console.log('AJAX request to IG API failed. ');
+        console.log('  error status: ' + textStatus);
         console.log(errorThrown);
       }
   });
