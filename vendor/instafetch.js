@@ -106,6 +106,7 @@ Instafetch.prototype.fetch = function(params) {
           console.log('================================');
           console.log('ERROR response form IG API: ');
           console.log('  ' + response.meta.error_type + ': ' +response.meta.error_message);
+          Raven.captureMessage('[ERROR response form IG API] ' + response.meta.error_type + ': ' +response.meta.error_message )
         }
       },
       error: function(jqXHR, textStatus, errorThrown) {
@@ -113,6 +114,14 @@ Instafetch.prototype.fetch = function(params) {
         console.log('AJAX request to IG API failed. ');
         console.log('  error status: ' + textStatus);
         console.log(errorThrown);
+
+        Raven.captureMessage(errorThrown || jqXHR.statusText, {
+            extra: {
+                status: jqXHR.status,
+                error: errorThrown || jqXHR.statusText,
+                response: jqXHR.responseText.substring(0, 100)
+            }
+        });
       }
   });
 }
