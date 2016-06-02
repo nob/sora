@@ -30,7 +30,7 @@ Instafetch.prototype.fetch = function(params) {
 
   // If a user is specified, always get all media by user first
   if(params.hasOwnProperty('user')) {
-    apiUrl += 'users/' + params.user + '/media/recent/?client_id=' + this.clientId + '&callback=callbackFunction&count=';
+    apiUrl += 'users/' + params.user + '/media/recent/?access_token=' + this.clientId + '&callback=callbackFunction&count=';
     // If no tags were specified, get based on the limit
     if(!params.hasOwnProperty('tag')) {
       apiUrl += params.limit;
@@ -42,7 +42,7 @@ Instafetch.prototype.fetch = function(params) {
   }
   // Otherwise, get the tags based on the limit
   else {
-    apiUrl += 'tags/' + params.tag + '/media/recent/?client_id=' + this.clientId + '&callback=callbackFunction&count=' + params.limit;
+    apiUrl += 'tags/' + params.tag + '/media/recent/?access_token=' + this.clientId + '&callback=callbackFunction&count=' + params.limit;
   }
 
   if (params.hasOwnProperty('maxId')) {
