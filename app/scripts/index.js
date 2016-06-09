@@ -10,49 +10,58 @@
       limit: limit,
       callback: function(response, params) {
         var ig_items = response.data;
-        for(var i = 0; i < ig_items.length; i++) {
-          var low_res_url = ig_items[i].images.low_resolution.url;
-          var std_res_url = ig_items[i].images.standard_resolution.url;
-          var thn_res_url = ig_items[i].images.thumbnail.url;
-          // var shot_date = new Date(Number(ig_items[i].created_time + '000'));
-          // var shot_date_str = (shot_date.getMonth() + 1) + '月' + shot_date.getDate() + '日';
-          var caption = ig_items[i].caption.text;
-          caption = caption.replace(/(#.+\s|#.+$)/g, ''); //eliminate tags from caption.
-          var lightbox_config = {
-            "items": [{
-              "url": std_res_url,
-              "width": 640,
-              "height": 640,
-              //"caption": "[" + shot_date_str + "] " + caption,
-              "caption": caption,
-              "type": "image"
-            }]
-          };
-          //Add group name (= elm_class_name) to config to show grouped lightbox.
-          if (limit > 1) {
-            lightbox_config.group = elm_class_name;
-          }
+        var $lightbox_elms = $('.' + elm_class_name);
 
-          /////
-          //Start modifying lightbox element and it's descendant with data fetched from IG.
-          ////
-          var $lightbox_elms = $('.' + elm_class_name);
+        for(var i = 0; i < $lightbox_elms.length; i++) {
           var $lb_elm = $lightbox_elms.eq(i);
-          $lb_elm.attr('href', '#'); //Replace href attr value to "#"
-          $lb_elm.addClass('w-lightbox');//Put 'w-lightbox' class back to the element.
-          $lb_elm.find('[class*="-img"]').attr('src', low_res_url); //set images.
-          // $lb_elm.find('[class*="-date"]').text(shot_date_str); //set date.
-          var trim_length = (elm_class_name == 'ig-news') ? 45 : 160;
-          trimmed_caption = caption.substring(0, trim_length) + '...';
-          $lb_elm.find('[class*="-caption"]').text(trimmed_caption); // set caption.
-          $lb_elm.find('.w-json').html(JSON.stringify(lightbox_config)); //Replace lightbox JSON configurations.
-        }
+          if (i in ig_items) {
+            //Istagram item for this lightbox element was fetched from IG API.
+            //Set the item to the element.
+            var low_res_url = ig_items[i].images.low_resolution.url;
+            var std_res_url = ig_items[i].images.standard_resolution.url;
+            var thn_res_url = ig_items[i].images.thumbnail.url;
+            // var shot_date = new Date(Number(ig_items[i].created_time + '000'));
+            // var shot_date_str = (shot_date.getMonth() + 1) + '月' + shot_date.getDate() + '日';
+            var caption = ig_items[i].caption.text;
+            caption = caption.replace(/(#.+\s|#.+$)/g, ''); //eliminate tags from caption.
+            var lightbox_config = {
+              "items": [{
+                "url": std_res_url,
+                "width": 640,
+                "height": 640,
+                //"caption": "[" + shot_date_str + "] " + caption,
+                "caption": caption,
+                "type": "image"
+              }]
+            };
+            //Add group name (= elm_class_name) to config to show grouped lightbox.
+            if (limit > 1) {
+              lightbox_config.group = elm_class_name;
+            }
 
-        /////
-        // Initialize lightbox again with newly set configurations.
-        //  TODO: Need to remove 1st ready() call for lightbox initialization outside of this function?
-        /////
-        Webflow.require('lightbox').ready();
+            /////
+            //Start modifying lightbox element and it's descendant with data fetched from IG.
+            ////
+            $lb_elm.attr('href', '#'); //Replace href attr value to "#"
+            $lb_elm.addClass('w-lightbox');//Put 'w-lightbox' class back to the element.
+            $lb_elm.find('[class*="-img"]').attr('src', low_res_url); //set images.
+            // $lb_elm.find('[class*="-date"]').text(shot_date_str); //set date.
+            var trim_length = (elm_class_name == 'ig-news') ? 45 : 160;
+            trimmed_caption = caption.substring(0, trim_length) + '...';
+            $lb_elm.find('[class*="-caption"]').text(trimmed_caption); // set caption.
+            $lb_elm.find('.w-json').html(JSON.stringify(lightbox_config)); //Replace lightbox JSON configurations.
+
+            /////
+            // Initialize lightbox again with newly set configurations.
+            //  TODO: Need to remove 1st ready() call for lightbox initialization outside of this function?
+            /////
+            Webflow.require('lightbox').ready();
+          } else {
+            //Istagram item for this lightbox element was not fetched from IG API.
+            //Hide the element.
+            $lb_elm.hide();
+          }
+        }
       }
     });
   }
