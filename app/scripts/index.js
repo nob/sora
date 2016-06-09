@@ -2,7 +2,7 @@
   /**
    * Fetch posts data from Instagram via it's API and set them to the specific DOM in page.
    */
-  function setIGitems(fetcher, tag_name, elm_class_name, limit) {
+  function setIGItems(fetcher, tag_name, elm_class_name, limit) {
     fetcher.fetch({
       user: 1980581384, // fetch sora_to_iro's photos. You can get this ID by username using http://jelled.com/instagram/lookup-user-id
       // user: 2536296892, // fetch jointanet's photos. You can get this ID by username using http://jelled.com/instagram/lookup-user-id
@@ -92,9 +92,9 @@
 
     // Get an instance of a fetcher for Instagram API.
     var fetcher = new Instafetch('1980581384.71b0391.976283508a5640828dd51c526f2f512f'); //IG access_token of sora_to_iro.
-    setIGitems(fetcher, 'イベント', 'ig-event', 4);
-    setIGitems(fetcher, 'おしらせ', 'ig-news', 1);
-    setIGitems(fetcher, 'ごはん', 'ig-lunch', 1);
+    setIGItems(fetcher, 'イベント', 'ig-event', 4);
+    setIGItems(fetcher, 'おしらせ', 'ig-news', 1);
+    setIGItems(fetcher, 'ごはん', 'ig-lunch', 1);
   });
 
 })(window.jQuery);
