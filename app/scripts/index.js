@@ -91,7 +91,6 @@
     ]);
 
     // Get an instance of a fetcher for Instagram API.
-    // var fetcher = new Instafetch('1980581384.71b0391.976283508a5640828dd51c526f2f512f'); //IG access_token of sora_to_iro.
     var fetcher = new Instafetch('1980581384.1677ed0.0dc8e578181242c28659d86bae62cceb'); //IG access_token of sora_to_iro.
     setIGItems(fetcher, 'イベント', 'ig-event', 4);
     setIGItems(fetcher, 'おしらせ', 'ig-news', 1);
