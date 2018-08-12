@@ -96,5 +96,12 @@
     setIGItems(fetcher, 'おしらせ', 'ig-news', 1);
     setIGItems(fetcher, 'ごはん', 'ig-lunch', 1);
   });
-
+  
+  //map description model (Sweetalert)
+  $('.map-desc a').click(function(){
+      swal('JR京都線 摂津富田駅から徒歩15分\n阪急京都線 富田駅から徒歩20分\n\nバスでお越しの場合は、JR摂津富田駅 北側にあるバスロータリー4番のりばより「宮田公民館前」下車と表示されているバスに乗車していただくと5分ほどでバス停「宮田公民館前」に到着します。そこより徒歩2分ほどの場所にソラトイロはあります。\n\nまた、JR摂津富田駅近くにある、レンタサイクル「グリーンフラッグ」さんで自転車を借りてお越しいただくのもオススメです。');
+  });
+  $('.w-lightbox').click(function(){
+    alert('mkmkmkmkmk');  
+  });
 })(window.jQuery);

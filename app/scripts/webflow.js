@@ -1668,6 +1668,7 @@
 
 	    // Prevent document from scrolling while lightbox is active.
 	    addClass($refs.html, 'noscroll');
+		document.body.classList.toggle('noscroll');
 
 	    return lightbox.show(index || 0);
 	  }
@@ -1738,6 +1739,7 @@
 
 	    // Event handlers are also removed.
 	    removeClass($refs.html, 'noscroll');
+		document.body.classList.toggle('noscroll');
 	    $refs.lightbox.remove();
 	    $refs = undefined;
 	  };
@@ -1925,6 +1927,7 @@
 	    // If the lightbox hasn't been destroyed already
 	    if ($refs) {
 	      removeClass($refs.html, 'noscroll');
+		  document.body.classList.toggle('noscroll');
 	      addClass($refs.lightbox, 'hide');
 	      $refs.strip.empty();
 	      $refs.view && $refs.view.remove();
