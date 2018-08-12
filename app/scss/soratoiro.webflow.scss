@@ -523,7 +523,9 @@ img {
   float: none;
   font-family: source-han-sans-japanese, sans-serif;
 }
-
+.map-desc {
+  margin-top: -100px;
+}
 .store-phone {
   margin-bottom: 9px;
   font-family: source-han-sans-japanese, sans-serif;
@@ -790,7 +792,7 @@ img {
 
 .to-instagram-txt {
   position: absolute;
-  left: 55px;
+  left: 95px;
   z-index: 1;
   display: block;
   padding-top: 0px;
@@ -911,7 +913,7 @@ html.w-mod-js * {
   .foot-bg {
     position: relative;
     height: 100%;
-    background-position: 50% 14px;
+    background-position: 50% 0px;
     background-size: cover;
   }
   .row1 {
