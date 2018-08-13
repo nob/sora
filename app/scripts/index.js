@@ -45,7 +45,7 @@
             $lb_elm.attr('href', '#'); //Replace href attr value to "#"
             $lb_elm.addClass('w-lightbox');//Put 'w-lightbox' class back to the element.
             if (elm_class_name === 'ig-zakka') {
-                $lb_elm.find('.brand-item').css('background-image', `url(${low_res_url})`); //set images.
+                $lb_elm.find('.brand-item').css('background-image', 'url(' + low_res_url + ')'); //set images.
                 var match = caption.match(/^(.*)(:|：)/);
                 if (match == null) {
                     $lb_elm.find('.brand-title-txt').remove();
