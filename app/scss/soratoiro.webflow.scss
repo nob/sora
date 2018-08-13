@@ -401,45 +401,17 @@ img {
   border-radius: 3px;
   box-shadow: #978f8f 2px 2px 3px 0px;
   cursor: pointer;
-  &.monolog {
-    padding-top: 87px;
-    float: none;
-    background-image: url('../images/brand-monolog.png');
-    background-position: 0px 0px;
-    background-size: cover;
-    &:hover {
-      opacity: 0.36;
-    }
-  }
-  &.kiam {
-    position: static;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    float: none;
-    border-color: #faf2df;
-    background-image: url('../images/brand-kiam.png');
-    background-position: 0px 0px;
-    background-size: cover;
-    &:hover {
-      opacity: 0.36;
-    }
-  }
-  &.chie {
-    background-image: url('../images/brand-chie.png');
-    background-position: 0px 0px;
-    background-size: cover;
-    &:hover {
-      opacity: 0.36;
-    }
-  }
-  &.mamono {
-    background-image: url('../images/brand-mamono.png');
-    background-position: 0px 0px;
-    background-size: cover;
-    &:hover {
-      opacity: 0.36;
-    }
+  position: static;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  float: none;
+  border-color: #faf2df;
+  background-image: url('../images/sorry2.jpg');
+  background-position: 0px 0px;
+  background-size: cover;
+  &:hover {
+    opacity: 0.36;
   }
 }
 

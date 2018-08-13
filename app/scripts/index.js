@@ -23,7 +23,7 @@
             // var shot_date = new Date(Number(ig_items[i].created_time + '000'));
             // var shot_date_str = (shot_date.getMonth() + 1) + '月' + shot_date.getDate() + '日';
             var caption = ig_items[i].caption.text;
-            caption = caption.replace(/(#.+\s|#.+$)/g, ''); //eliminate tags from caption.
+            caption = caption.replace(/(#[^\s]+\s|#.+$)/g, ''); //eliminate tags from caption.
             var lightbox_config = {
               "items": [{
                 "url": std_res_url,
@@ -44,7 +44,17 @@
             ////
             $lb_elm.attr('href', '#'); //Replace href attr value to "#"
             $lb_elm.addClass('w-lightbox');//Put 'w-lightbox' class back to the element.
-            $lb_elm.find('[class*="-img"]').attr('src', low_res_url); //set images.
+            if (elm_class_name === 'ig-zakka') {
+                $lb_elm.find('.brand-item').css('background-image', `url(${low_res_url})`); //set images.
+                var match = caption.match(/^(.*)(:|：)/);
+                if (match == null) {
+                    $lb_elm.find('.brand-title-txt').remove();
+                } else {
+                    $lb_elm.find('.brand-title-txt').text(match[1]);
+                }
+            } else {
+                $lb_elm.find('[class*="-img"]').attr('src', low_res_url); //set images.
+            }
             // $lb_elm.find('[class*="-date"]').text(shot_date_str); //set date.
             var trim_length = (elm_class_name == 'ig-news') ? 45 : 160;
             trimmed_caption = caption.substring(0, trim_length) + '...';
@@ -92,16 +102,15 @@
 
     // Get an instance of a fetcher for Instagram API.
     var fetcher = new Instafetch('1980581384.1677ed0.0dc8e578181242c28659d86bae62cceb'); //IG access_token of sora_to_iro.
+    // var fetcher = new Instafetch('2536296892.3198c5f.008c3b88fa3649fa959f393ef5978767'); //IG access_token of sora_to_iro.
     setIGItems(fetcher, 'イベント', 'ig-event', 4);
     setIGItems(fetcher, 'おしらせ', 'ig-news', 1);
     setIGItems(fetcher, 'ごはん', 'ig-lunch', 1);
+    setIGItems(fetcher, '販売', 'ig-zakka', 4);
   });
   
   //map description model (Sweetalert)
   $('.map-desc a').click(function(){
       swal('JR京都線 摂津富田駅から徒歩15分\n阪急京都線 富田駅から徒歩20分\n\nバスでお越しの場合は、JR摂津富田駅 北側にあるバスロータリー4番のりばより「宮田公民館前」下車と表示されているバスに乗車していただくと5分ほどでバス停「宮田公民館前」に到着します。そこより徒歩2分ほどの場所にソラトイロはあります。\n\nまた、JR摂津富田駅近くにある、レンタサイクル「グリーンフラッグ」さんで自転車を借りてお越しいただくのもオススメです。');
-  });
-  $('.w-lightbox').click(function(){
-    alert('mkmkmkmkmk');  
   });
 })(window.jQuery);
