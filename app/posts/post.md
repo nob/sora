@@ -1,8 +1,6 @@
 ---
 _options:
   layout: app/layouts/layout.hbs
-  partials:
-    - app/partials/buttons.hbs
 title: Starter Template
 ---
 
